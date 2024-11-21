@@ -3,7 +3,7 @@ services:
   vprodb:
     build: 
       context: ./Docker-files/db
-    image: vvduth/vprofiledb
+    image: vprocontainers/vprofiledb
     container_name: vprodb
     ports:
       - "3306:3306"
@@ -20,13 +20,13 @@ services:
   vpromq01:
     image: rabbitmq
     ports: 
-      - "5672:5672"
+      - "15672:15672"
  
  
   vproapp:
     build: 
       context: ./Docker-files/app
-    image: vvduth/vprofileapp
+    image: vprocontainers/vprofileapp
     container_name: vproapp
     ports:
       - "8080:8080"
@@ -36,7 +36,7 @@ services:
   vproweb:
     build:
       context: ./Docker-files/web
-    image: vvduth/vprofileweb
+    image: vprocontainers/vprofileweb
     container_name: vproweb
     ports:
       - "80:80"
